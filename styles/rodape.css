@@ -9,8 +9,7 @@
     display : flex;
     justify-content: space-evenly;
     align-items: baseline;
-    height: 58px;
-    overflow:hidden;
+    height:7vh;
 }
 
 .opcao_rodape{
