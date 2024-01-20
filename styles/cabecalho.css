@@ -1,0 +1,30 @@
+.cabecalho{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding-top: 3vh;
+    margin-left: 3vw;
+    margin-bottom: 3vh;
+}
+
+.foto_perfil{
+    margin-right: 3vw;
+}
+
+.sonia{
+    width: 20vw;
+    height: 9vh;
+}
+
+.titulo{
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--cinza_texto_escuro);
+    margin-bottom: 1vh;
+}
+
+.texto_header{
+    color: var(--cinza_texto_claro);
+    font-size: 0.8rem;
+    font-weight: 400;
+}

@@ -1,0 +1,32 @@
+.menu_lateral{
+    display:none;
+    border-right: 1px solid;
+    border-color: var(--cinza_texto_claro);
+}
+
+.lista_menu_lateral{
+    display:flex;
+    width: 90%;
+    flex-direction: column;
+    align-items: stretch;
+    text-align: justify;
+}
+
+.item_lista_menu_lateral{
+    margin: 2vh
+}
+
+.img_menu_lateral{
+    margin-right: 2px;
+}
+
+@media (min-width: 1000px){
+    .menu_lateral{
+        display: flex;
+        position:fixed;
+        left:0vw;
+        height: 100vh;
+        width: 15vw;
+        background-color: var(--branco);
+    }
+}

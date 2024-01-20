@@ -1,0 +1,54 @@
+.rodape{
+    background-color: var(--branco);
+    border-radius: 12px 12px 0px 0px;
+    position:fixed;
+    bottom:0;
+    margin: 0 auto;
+    width: 100vw;
+    font-size: 0.75rem;
+    display : flex;
+    justify-content: space-evenly;
+    align-items: baseline;
+    height: 58px;
+}
+
+.opcao_rodape{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    height: 70%;
+    margin: 1vh;
+    cursor:pointer;
+}
+
+.opcao_rodape_texto_selecionado{
+    color: var(--azul);
+    font-weight: 400;
+    font-size: 0.75rem;
+    margin-top: 3px;
+}
+
+.opcao_rodape_texto{
+    color: var(--cinza_texto_escuro);
+    font-weight: 400;
+    font-size: 0.75rem;
+    margin-top: 3px;
+}
+
+@media (min-width: 1000px){
+    .rodape{
+        display:none;
+    }
+
+    .opcao_rodape_texto_selecionado{
+        font-weight: 600;
+        font-size: 1rem;
+        margin-left: 1vw;
+    }
+
+    .opcao_rodape_texto{
+        font-weight: 600;
+        font-size: 1rem;
+        margin-left: 1vw;
+    }
+}

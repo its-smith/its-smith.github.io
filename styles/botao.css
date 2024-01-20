@@ -1,0 +1,294 @@
+/*.div_botao_cadastro{
+    position: fixed;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    right:0;
+    bottom: 65px;
+    background-color: var(--azul);
+    border: 1px solid;
+    border-color: var(--azul);
+    border-radius: 50%;
+    width: 56px;
+    height: 56px;
+    font-weight:600;
+    color: var(--branco);
+    font-size: 36px;
+    cursor:pointer;
+}*/
+
+/*agora funciona, mas o botão tá um checkbox gigante*/
+.formulario{
+    display:none;
+}
+
+.botao_cadastro{
+    position: fixed;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    right:5px;
+    bottom: 65px;
+    background-color: var(--azul);
+    border: 1px solid;
+    border-color: var(--azul);
+    border-radius: 50%;
+    width: 56px;
+    height: 56px;
+    cursor:pointer;
+    z-index: 1;
+    /*margin-right: 5vw; tem algumas coisas que podem entrar em conflito, no caso esse margin-right ctz que
+    entra em conflito com o right:0*/
+}
+
+/*missão atual é deixar o texto responsivo também.
+Px é fixo, mas REM é de acordo com a fonte do navegador
+E além disso tem uma razão entre eles, pra facilitar o processo de conversão
+1 rem -> 16px*/
+
+.label_botao_cadastro{
+    position: fixed;
+    right:20px;
+    bottom: 70px;
+    font-weight:400;
+    color: var(--branco);
+    font-size: 46px;
+    cursor:pointer;
+    z-index: 1;
+}
+
+input[type="checkbox"]{
+    appearance: none;
+    margin: 0;
+}
+
+.cinza_transparente{
+    position: fixed;
+    top:0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5); /*nao usar opacity, senao os filhos ficam transparente*/
+    display: none;
+}
+
+.botao_cadastro:checked ~ .cinza_transparente{
+    /*how the fuck do i transformo essa div em visível aaa
+    Não vai funfar assim pq o ~ é um seletor de coisas no mesmo nivel...
+    
+    Então o checkbox teria que estar no mesmo nível da div que some e aparece, agora
+    como, vou ter que alterar o rolê todinho yaaay*/
+    display: block;
+}
+
+.identificador_botao{
+    border: 1px solid;
+    border-color: var(--branco);
+    border-radius: 2300px;
+    padding: 10px 8px;
+    height: 12px;
+    background-color: var(--branco);
+    color: var(--cinza_texto_escuro);
+    font-size: 0.7rem;
+    font-weight: 500;
+    margin-right: 2vw;
+}
+
+.div_botao{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--azul);
+    border: 1px solid;
+    border-color: var(--azul);
+    border-radius: 50%;
+    width: 56px;
+    height: 56px;
+    cursor:pointer;
+    margin-bottom: 2vh;
+}
+
+.opcoes_menu_oculto{
+    position:fixed;
+    bottom: 120px;
+    margin-right: 7px;
+    display: flex;
+    justify-content: end;
+    align-items: baseline;
+    flex-wrap: wrap;   
+}
+
+/*rapaz ta tudo transparente nessa bagaça*/
+/*algumas propriedades mexem com outras, então é bom tomar cuidado
+com a ordem das coisas que eu faço*/
+
+@media (min-width: 455px){
+    .opcoes_menu_oculto{
+        position:fixed;
+        bottom: 16vh;
+        left: 33vw;
+        justify-content: space-between;
+        width: 65vw;
+    }
+}
+
+@media (min-width: 710px){
+    .opcoes_menu_oculto{
+        position:fixed;
+        left: 49vw;
+        bottom: 15vh;
+        margin-right: 7px;
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+        flex-wrap: wrap;
+        width: 50vw;
+    }   
+}
+
+@media (min-width: 800px){
+    .opcoes_menu_oculto{
+        bottom: 9vh;
+    }
+}
+
+@media (min-width: 940px){
+    .opcoes_menu_oculto{
+        position:fixed;
+        bottom: 9vh;
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+        flex-wrap: wrap;
+        width: 40vw;
+        left: 59vw;
+    }
+}
+
+@media (min-width: 1000px){
+
+/*quando estiver checked, vai sumir, e quando o enviar for clicado, vai reaparecer*/
+    .botao_cadastro{
+        bottom: 5vh;
+        right: 1vw;
+    }
+
+    .botao_cadastro:checked{
+        display: none;
+    }
+
+    .botao_cadastro:checked ~.label_botao_cadastro{
+        display: none;
+    }
+
+    .label_botao_cadastro{
+        bottom: 6vh;
+        right: 2vw;
+    }
+
+    .opcoes_menu_oculto{
+        display: none;
+    }
+
+    /*botoes de celular somem quando clico no botão numa dimensão de PC
+    agr entra o cadastro*/
+
+    .formulario{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        text-align: center;
+        background-color: var(--branco);
+        border: 1px solid;
+        border-color: var(--branco);
+        border-radius: 16px;
+        width: 45vw;
+        height:70vh;
+        margin-left:20vw;
+        margin-top: 10vh;
+        padding-top: 3vh;
+        overflow:scroll;
+    }
+
+    .nome_cadastro{
+        border: 1px solid;
+        border-color: var(--cinza_texto_claro);
+        border-radius: 8px;
+        padding: 1vh;
+        margin-bottom: 3vh;
+        margin-top: 1vh;
+    }
+
+    .nome_cadastro:focus{
+        border-color: var(--azul);
+    }
+
+    .radio_tipo_consulta{
+        /*depois achar um jeito de deixar essas bolinhas maiores*/
+        margin-bottom: 3vh;
+        margin-top: 1vh;
+    }
+
+    .radio_texto{
+        color: var(--cinza_texto_escuro);
+        font-weight: 500;
+    }
+
+    .data_consulta{
+        margin-bottom: 3vh;
+        margin-top: 1vh;
+        border: 1px solid;
+        border-color: var(--cinza_texto_claro);
+        border-radius: 8px;
+        padding: 1vh;
+    }
+
+    .hora_consulta{
+        margin-bottom: 3vh;
+        margin-top: 1vh;
+        border: 1px solid;
+        border-color: var(--cinza_texto_claro);
+        border-radius: 8px;
+        padding: 1vh;
+    }
+
+    .observacoes{
+        margin-bottom: 3vh;
+        margin-top: 1vh; 
+        border: 1px solid;
+        border-color: var(--cinza_texto_claro);
+        border-radius: 8px;
+        width: 50%;
+        height: auto;
+    }
+
+    .enviar{
+        margin-bottom: 3vh;
+        border: 1px solid;
+        border-color: var(--azul);
+        border-radius: 8px;
+        background-color: var(--azul);
+        color: var(--branco);
+        font-weight: 700;
+        font-size: 16px;
+        padding: 10px;
+    }
+
+    .enviar:hover{
+        cursor:pointer;
+    }
+
+    .info_cadastro{
+        color: var(--cinza_texto_escuro);
+        font-weight: 600;
+    }
+/*Tá ficando bonitinho,mas quero detonar o botão de + quando o formulario estiver ativo
+Como?
+
+O formulário ta presente na div transparente, e a div dos botões do mobile fica oculta enquanto a 
+dimensão é maior doq 1000px
+
+já saquei q quando eu minimizo com o formulario ativo, volta pros botoes de mobile, safo
+
+mas como desabilitar o botão de + enquanto a div transparent estiver visivel se eu n tenho um condicional? :| */
+
+}
